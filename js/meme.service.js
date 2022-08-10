@@ -24,14 +24,12 @@ let gMeme = {
 
 function draw() {
     let { txt, size, align, color } = gMeme.lines[0]
-    gCtx.beginPath()
     gCtx.textBaseline = 'middle';
     gCtx.font = `${size}px serif`;
     gCtx.textAlign = align
     gCtx.lineWidth = 1;
     gCtx.fillStyle = color
     gCtx.fillText(txt, 200, 100)
-    gCtx.closePath()
 }
 
 
@@ -39,7 +37,8 @@ function handleTxtSize(val) {
     let { size } = gMeme.lines[0]
     val === "add" ? gMeme.lines[0].size++ : gMeme.lines[0].size--
     if (size >= 45 || size <= 10) return
-    console.log(gMeme.lines[0].size);
+    console.log(gMeme.lines[0].size)
+    renderMeme()
 }
 
 function drawImg(id) {
@@ -54,13 +53,23 @@ function inputChange(type, val) {
     } else if (type === 'color') {
         gMeme.lines[0].color = val
     }
+    renderMeme()
 }
 
 function imageSelect(el) {
     const { id } = el
     gMeme.selectedImgId = id
+    console.log(gMeme.selectedImgId);
+    drawImg(gMeme.selectedImgId)
 }
 
-function hanleAlignChange(val) {
+function handleAlignChange(val) {
     gMeme.lines[0].align = val
+    renderMeme()
+}
+
+function renderMeme() {
+    // const { id } = gMeme.selectedImgId
+    drawImg(gMeme.selectedImgId)
+    draw()
 }
