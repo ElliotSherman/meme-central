@@ -14,7 +14,4 @@ function init() {
 }
 
 
-function onImageClick(el) {
-    renderMeme(el)
-}
 

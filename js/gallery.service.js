@@ -106,5 +106,5 @@ function _createImages(gallery) {
 
 function _createImage(img) {
     let { id, url, keywords } = img
-    return `<img onclick="onImageClick(this)" src="${url}" id="${id}" alt="${keywords.join(',')}">`
+    return `<img onclick="onImageSelect(this)" src="${url}" id="${id}" alt="${keywords.join(',')}">`
 }

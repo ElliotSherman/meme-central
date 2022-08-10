@@ -1,13 +1,13 @@
 'use strict'
 
-// txt: 'I sometimes eat Falafel',
-// size: 20,
-// align: 'left',
-// color: 'red'
+function onInputChange(type, val){
+    inputChange(type, val)
+}
 
+function onHandleTxtSize(val){
+    handleTxtSize(val)
+}
 
-function renderMeme(el) {
-    const { id } = el
-    drawImg(id)
-    console.log('on image click this function will rendeer the meme to the canvas', id);
+function onHandleAlignChange(val){
+    hanleAlignChange(val)
 }
