@@ -16,12 +16,10 @@ function init() {
 
 
 function onImageClick(el) {
-    console.log(el);
-    console.log('moving pic to canvas');
+    renderMeme(el)
 }
 
 function draw() {
-    
     gCtx.font = '48px serif';
     gCtx.fillText('Hello world', 10, 50);
   }

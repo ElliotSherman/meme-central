@@ -1,6 +1,8 @@
 'use strict'
 
-var gImgs = [
+// var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+
+const gImgs = [
     {
         id: 1,
         url: 'img/1.jpg',
@@ -93,6 +95,7 @@ var gImgs = [
     // },
 ]
 //  {id url keywords}
+
 function renderGallery(gallery) {
     _createImages(gallery)
 }
