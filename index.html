@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeCentral</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body onload="init()">
+
+    <!-- HEADER -->
+    <header class="main-header flex space-between align-center">
+        <div class="logo flex space-between align-center ">
+            <h1 class="main-logo">Meme<span class="second-logo">Central</span></h1>
+        </div>
+        <nav class="main-nav flex space-between align-center">
+            <ul class="nav">
+                <li class="nav-item active">gallery</li>
+                <li class="nav-item">edit</li>
+                <li class="nav-item">about</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- GALLERY -->
+    <section class="main-gallery grid">
+
+    </section>
+
+    <main class="main-editor">
+        <!-- CANVAS -->
+        <section class="canvas-container">
+            <canvas id="canvas" width="450" height="450"></canvas>
+        </section>
+
+        <!-- CONTROLLS -->
+        <section class="main-controls">
+            <input class="main-text-input" type="text" placeholder="your text here" oninput="">
+            <!-- <button class="control-position"></button> -->
+            <button class="control-delete" onclick="">delete</button>
+            <button class="control-font-plus" onclick="">A+</button>
+            <button class="control-font-minus" onclick="">A-</button>
+            <button class="control-align " value="left" onclick="">left</button>
+            <button class="control-align " value="center" onclick="">center</button>
+            <button class="control-align " value="right" onclick="">right</button>
+            <input type="color" name="color" oninput="">
+            <select name="select-font" onchange="">
+                <option value="impact">IMPACT</option>
+            </select>
+            <button class="control-clear">clear</button>
+            <a href="#">save</a>
+            <a href="#">share</a>
+        </section>
+    </main>
+    <!-- ABOUT -->
+    <section class="main-about">
+        <h2>about me</h2>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>footer</h2>
+    </footer>
+    <script src="js/meme.service.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/gallery.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/main.controller.js"></script>
+</body>
+
+</html>
