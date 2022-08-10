@@ -1,3 +1,27 @@
+/* SETTIINGS */
+/* basics */
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* HELPERS */
+.grid {
+    display: grid;
+    /* grid-auto-flow: row dense; */
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
 }
