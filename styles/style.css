@@ -1,14 +1,154 @@
 /* SETTIINGS */
+
+/* variables */
+:root {
+    /* color palete */
+    /* backgrounds */
+    --bg-grad: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    --bg-col1: #22252c;
+    --bg-col2: #383b42;
+    --bg-search: #22252c;
+    --bg-active: #fefefe;
+    --bg-text-controls: #19a59f;
+
+    /* buttons */
+    /* delete */
+    --bg-delete: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+    --bg-add-line: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+    --bg-switch-ine: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+    --bg-share: #1e7cd3;
+    --bg-download: #8f44bb;
+
+    /* input */
+
+    /* /~main-text~/ */
+    /* --clr1: #606060; */
+    /* /~logo~/ */
+    /* --clr2: #ffffff; */
+    /* /~header-background~/ */
+    /* --clr3: #292929; */
+    /* /~buttons-hover~/ */
+    /* --clr4: #58c93a; */
+    /* /~headings~/ */
+
+}
+
+@font-face {
+    font-family: lato-regular;
+    src: url(../styles/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: anonymous;
+    src: url(../styles/fonts/AnonymousPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: anton;
+    src: url(../styles/fonts/Anton-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato-bold;
+    src: url(../styles/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: lime-regular;
+    src: url(../styles/fonts/Limelight-Regular.ttf);
+}
+
+@font-face {
+    font-family: peralta;
+    src: url(../styles/fonts/Peralta-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(../styles/fonts/RobotoSlab-Bold.ttf);
+}
+
+@font-face {
+    font-family: roboto-slab;
+    src: url(../styles/fonts/RobotoSlab-Regular.ttf);
+}
+
+/* /~ FA ~/ */
+
+/* @font-face { */
+/* font-family: fa; */
+/* src: url(../fonts/fontAwesome/fa-brands-400.ttf); */
+/* } */
+
+/* .fa::before { */
+/* font-family: fa; */
+/* } */
+
+/* .fa.facebook::before { */
+/* content: "\f39e"; */
+/* } */
+
+/* .fa.facebook::before { */
+/* content: "\f39e"; */
+/* } */
+/* <li><a href="www.facebook.com" class="fa facebook" aria-label="facebook icon"></a></li> */
+
+@font-face {
+    font-family: fa;
+    src: url(../styles/fontAwesome/fa-brands-400.ttf);
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url(../styles/fontawsome/fa-solid-900.ttf);
+}
+
+@font-face {
+    font-family: fa-regular;
+    src: url(../styles/fontawsome/fa-regular-400.ttf);
+}
+
 /* basics */
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
+html {
+    font-family: lato-regular;
+    /* background-image: var(--bg-grad); */
+    background-color: var(--bg-col1);
+    font-size: 21px;
+    font-weight: 500;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1em;
+    font-weight: 400;
+    line-height: 1;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    height: 100%;
+}
+
+/* LAYOUT */
+.main-layout{
+    max-width:1280px;
+    margin:auto;
+}
 /* HELPERS */
+/*button box-shadows */
+.btn-shadow {
+    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.58);
+}
+
 .grid {
     display: grid;
     /* grid-auto-flow: row dense; */
@@ -22,6 +162,129 @@ body {
     justify-content: space-between;
 }
 
+.flex.justify-center {
+    justify-content: center;
+}
+
 .flex.align-center {
     align-items: center;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* COMPONENTS */
+.main-app {
+    padding: 1rem;
+}
+
+.main-header {
+    background-image: var(--bg-grad);
+    border-radius: 100px;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 0.76rem;
+}
+
+.logo {
+    margin-left: 50px;
+    height: 3.47rem;
+    color: var(--bg-active);
+    text-transform: uppercase;
+}
+
+.main-logo {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: peralta;
+    margin-bottom: 0;
+    text-shadow: black -5px -2px 5px;
+}
+
+.second-logo {
+    text-align: center;
+    font-family: lato-regular;
+    font-size: 1rem;
+    letter-spacing: 10px;
+    line-height: 0.8;
+}
+
+.main-gallery {
+    flex: 1;
+    background-color: var(--bg-col2);
+    border-radius: 10px;
+    padding: 2.7142rem;
+    grid-auto-flow: dense;
+    grid-column-gap: 30px;
+    grid-row-gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.main-footer {
+    flex: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: var(--bg-grad);
+    width: 100%;
+}
+
+/* navbar */
+.main-nav {
+    height: 3.47rem;
+    flex-basis: 50%;
+}
+
+.main-nav .nav {
+    justify-content: center;
+    width: 100%;
+}
+
+.nav .nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+.nav .nav-item a {
+
+    height: 100%;
+    color: var(--bg-active);
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+.nav .nav-item:hover a {
+    cursor: pointer;
+    /* color : transparent; */
+    border-radius: 20px;
+    box-shadow: #fefefe 0 0 0 0;
+}
+
+.image-container img {
+    transition: box-shadow ease-in-out 0.3s;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.image-container img:hover {
+    box-shadow: black -7px 8px 14px 8px;
+}
+.main-footer{
+    border-top-left-radius:  20px;
+    border-top-right-radius: 20px ;
+    text-align: center;
+    box-shadow: black 10px -3px 14px 1px, inset cyan 0px 5px 14px 2px;
 }
