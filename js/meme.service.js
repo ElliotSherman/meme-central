@@ -73,3 +73,13 @@ function renderMeme() {
     drawImg(gMeme.selectedImgId)
     draw()
 }
+
+function borderSelectedLine(x, y) {
+    gCtx.beginPath();
+    gCtx.rect(x, y, 200, 200);
+    gCtx.fillStyle = 'transparent';
+    gCtx.fillRect(x, y, 200, 200);
+    gCtx.strokeStyle = 'red';
+    gCtx.stroke();
+    gCtx.closePath();
+}
