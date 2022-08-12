@@ -14,13 +14,13 @@
     <!-- HEADER -->
     <div class="main-app flex column justify-center main-layout">
         <header class="main-header flex space-between align-center">
-            <div class="logo flex column justify-center">
+            <div class="logo flex column justify-center text-center">
                 <h1 class="main-logo">Meme</h1>
                 <span class="second-logo">Central</span>
             </div>
             <nav class="main-nav flex ">
                 <ul class="nav  flex space-between align-center clean-list">
-                    <li class="nav-item active" onclick="handleActive(this)"><a href="#">gallery</a></li>
+                    <li class="nav-item text-center active" onclick="handleActive(this)"><a href="#">gallery</a></li>
                     <li class="nav-item" onclick="handleActive(this)"><a href="#">edit</a></li>
                     <li class="nav-item " onclick="handleActive(this)"><a href="#">about</a></li>
                 </ul>
@@ -44,6 +44,7 @@
                     oninput="onInputChange(this.type , this.value)">
                 <!-- <button class="control-position"></button> -->
                 <button class="control add-line" onclick="">add line</button>
+                <button class="control switch-line" onclick="">switch line</button>
                 <button class="control delete-line" onclick="">delete</button>
                 <button class="control font-plus" value="add" onclick="onHandleTxtSize(this.value)">A+</button>
                 <button class="control font-minus" onclick="onHandleTxtSize()">A-</button>
@@ -64,7 +65,7 @@
             <h2>about me</h2>
         </section>
         <!-- FOOTER -->
-        <footer class="main-footer">
+        <footer class="main-footer text-center">
             <small>Project by Elliot Sherman</small>
         </footer>
     </div>
