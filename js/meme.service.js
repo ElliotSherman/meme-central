@@ -59,7 +59,6 @@ function inputChange(type, val) {
 function imageSelect(el) {
     const { id } = el
     gMeme.selectedImgId = id
-    console.log(gMeme.selectedImgId);
     drawImg(gMeme.selectedImgId)
 }
 
@@ -69,7 +68,6 @@ function handleAlignChange(val) {
 }
 
 function renderMeme() {
-    // const { id } = gMeme.selectedImgId
     drawImg(gMeme.selectedImgId)
     draw()
 }

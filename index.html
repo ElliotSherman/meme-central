@@ -20,19 +20,19 @@
             </div>
             <nav class="main-nav flex ">
                 <ul class="nav  flex space-between align-center clean-list">
-                    <li class="nav-item active"><a href="#">gallery</a></li>
-                    <li class="nav-item "><a href="#">edit</a></li>
-                    <li class="nav-item "><a href="#">about</a></li>
+                    <li class="nav-item active" onclick="handleActive(this)"><a href="#">gallery</a></li>
+                    <li class="nav-item" onclick="handleActive(this)"><a href="#">edit</a></li>
+                    <li class="nav-item " onclick="handleActive(this)"><a href="#">about</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- GALLERY -->
-        <section class="main-gallery grid">
+        <section class="main-gallery page grid">
             <!-- images will be rendered here -->
         </section>
 
-        <main class="main-editor hide">
+        <main class="main-editor page hide">
             <!-- CANVAS -->
             <section class="canvas-container">
                 <canvas id="canvas" width="370" height="370"></canvas>
@@ -60,12 +60,12 @@
             </section>
         </main>
         <!-- ABOUT -->
-        <section class="main-about hide">
+        <section class="main-about page hide">
             <h2>about me</h2>
         </section>
         <!-- FOOTER -->
         <footer class="main-footer">
-            <h2>footer</h2>
+            <small>Project by Elliot Sherman</small>
         </footer>
     </div>
     <script src="js/meme.service.js"></script>

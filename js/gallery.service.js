@@ -101,7 +101,7 @@ function renderGallery(gallery) {
 }
 
 function _createImages(gallery) {
-    elGalleryGrid.innerHTML = gImgs.map(img => _createImage(img)).join('')
+    elGallery.innerHTML = gImgs.map(img => _createImage(img)).join('')
 }
 
 function _createImage(img) {
