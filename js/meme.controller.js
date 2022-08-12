@@ -11,7 +11,9 @@ function onHandleTxtSize(val){
 function onHandleAlignChange(val){
     handleAlignChange(val)
 }
-
+function handleFontChange(val){
+    fontChange(val)
+}
 function clearCanvas() {
     document.querySelector('.main-gallery').classList.remove('hide')
     document.querySelector('.main-editor').classList.add('hide')

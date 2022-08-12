@@ -11,27 +11,32 @@ let gMeme = {
             txt: 'I sometimes eat Falafel',
             size: 40,
             align: 'center',
+            font: 'impact',
             color: 'red'
         },
         {
             txt: 'somtimes i dont',
             size: 40,
-            align: 'center',
+            align: 'impact',
             color: 'blue'
         }
     ]
 }
 
 function draw() {
-    let { txt, size, align, color } = gMeme.lines[0]
+    let { txt, size, align, color, font } = gMeme.lines[0]
     gCtx.textBaseline = 'middle';
-    gCtx.font = `${size}px serif`;
+    gCtx.font = `${size}px ${font}`;
     gCtx.textAlign = align
     gCtx.lineWidth = 1;
     gCtx.fillStyle = color
     gCtx.fillText(txt, 200, 100)
 }
 
+function fontChange(val) {
+    gMeme.lines[0].font = val
+    renderMeme()
+}
 
 function handleTxtSize(val) {
     let { size } = gMeme.lines[0]
@@ -60,6 +65,7 @@ function imageSelect(el) {
     const { id } = el
     gMeme.selectedImgId = id
     drawImg(gMeme.selectedImgId)
+    // renderMeme()
 }
 
 function handleAlignChange(val) {

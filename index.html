@@ -18,46 +18,61 @@
                 <h1 class="main-logo">Meme</h1>
                 <span class="second-logo">Central</span>
             </div>
-            <nav class="main-nav flex ">
+            <nav class="main-nav flex">
                 <ul class="nav  flex space-between align-center clean-list">
                     <li class="nav-item text-center active" onclick="handleActive(this)"><a href="#">gallery</a></li>
-                    <li class="nav-item" onclick="handleActive(this)"><a href="#">edit</a></li>
-                    <li class="nav-item " onclick="handleActive(this)"><a href="#">about</a></li>
+                    <li class="nav-item text-center" onclick="handleActive(this)"><a href="#">edit</a></li>
+                    <li class="nav-item text-center" onclick="handleActive(this)"><a href="#">about</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- GALLERY -->
-        <section class="main-gallery page grid">
+        <section class="main-gallery page grid hide">
             <!-- images will be rendered here -->
         </section>
 
-        <main class="main-editor page hide">
+        <main class="main-editor page flex">
             <!-- CANVAS -->
             <section class="canvas-container">
                 <canvas id="canvas" width="370" height="370"></canvas>
             </section>
 
             <!-- CONTROLLS -->
-            <section class="main-controls">
-                <input class="main-text-input" type="text" placeholder="your text here"
-                    oninput="onInputChange(this.type , this.value)">
+            <section class="main-controls grid">
+                <div>
+                    <input class="main-text-input" type="text" placeholder="your text here"
+                        oninput="onInputChange(this.type , this.value)">
+                    <div>
+                        <button class="control switch-line" onclick="">switch line</button>
+                        <button class="control add-line" onclick="">add line</button>
+                        <button class="control erase-line" onclick="">erase</button>
+                        <button class="control-clear" onclick="clearCanvas()">delete</button>
+                    </div>
+                </div>
                 <!-- <button class="control-position"></button> -->
-                <button class="control add-line" onclick="">add line</button>
-                <button class="control switch-line" onclick="">switch line</button>
-                <button class="control delete-line" onclick="">delete</button>
-                <button class="control font-plus" value="add" onclick="onHandleTxtSize(this.value)">A+</button>
-                <button class="control font-minus" onclick="onHandleTxtSize()">A-</button>
-                <button class="control align " value="left" onclick="onHandleAlignChange(this.value)">left</button>
-                <button class="control align " value="center" onclick="onHandleAlignChange(this.value)">center</button>
-                <button class="control align " value="right" onclick="onHandleAlignChange(this.value)">right</button>
-                <input type="color" name="color" oninput="onInputChange(this.type , this.value)">
-                <select name="select-font" onchange="">
-                    <option value="impact">IMPACT</option>
-                </select>
-                <button class="control-clear" onclick="clearCanvas()">clear</button>
-                <a href="#">save</a>
-                <a href="#">share</a>
+                <div>
+                    <select name="select-font" onchange="handleFontChange(this.value)">
+                        <option value="impact" selected>IMPACT</option>
+                        <option value="lato-bold">Lato</option>
+                        <option value="anonymous">Anonymous</option>
+                        <option value="anton">Anton</option>
+                        <option value="lime-regular">Meme Central</option>
+                    </select>
+                    <button class="control font-plus" value="add" onclick="onHandleTxtSize(this.value)">A+</button>
+                    <button class="control font-minus" onclick="onHandleTxtSize()">A-</button>
+                    <button class="control align " value="left" onclick="onHandleAlignChange(this.value)">left</button>
+                    <button class="control align " value="center"
+                        onclick="onHandleAlignChange(this.value)">center</button>
+                    <button class="control align " value="right"
+                        onclick="onHandleAlignChange(this.value)">right</button>
+                    <input type="color" name="color" oninput="onInputChange(this.type , this.value)">
+                    <input type="color" name="stroke" oninput="onInputChange(this.type , this.value)">
+                </div>
+                <div>
+                    <a href="#">save</a>
+                    <a href="#">share</a>
+                </div>
             </section>
         </main>
         <!-- ABOUT -->
