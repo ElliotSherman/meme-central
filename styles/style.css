@@ -76,14 +76,92 @@
 
 /* /~ FA ~/ */
 
-/* @font-face { */
-/* font-family: fa; */
-/* src: url(../fonts/fontAwesome/fa-brands-400.ttf); */
+@font-face {
+    font-family: fa;
+    src: url(../styles/fontawsome/fa-brands-400.ttf);
+}
+
+@font-face {
+    font-family: fa-regular;
+    src: url(../styles/fontawsome/fa-regular-400.ttf);
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url(../styles/fontawsome/fa-solid-900.ttf);
+}
+
+/* FontAwesome */
+/* base classes*/
+.fa::before {
+    font-family: fa;
+}
+
+.fa-reg::before {
+    font-family: fa-regular;
+}
+
+.fa-solid::before {
+    font-family: fa-solid;
+}
+
+/* icons */
+.fa-solid.share::before {
+    content: "\f1e0";
+}
+
+.fa-solid.save::before {
+    content: "\f019";
+}
+
+.fa-solid.delete::before {
+    content: "\f2ed";
+}
+
+.fa-solid.erase::before {
+    content: "\f12d";
+}
+
+.fa-solid.font-sml::before {
+    content: "\41 \f068";
+}
+
+.fa-solid.font-lrg::before {
+    content: "\41 \2b";
+}
+
+.fa-solid.add::before {
+    content: "\2b";
+}
+
+.fa-solid.switch::before {
+    content: "\e476";
+}
+
+.fa-solid.center::before {
+    content: "\f037";
+}
+
+.fa-solid.left::before {
+    content: "\f036";
+}
+
+.fa-solid.right::before {
+    content: "\f038";
+}
+
+.fa-solid.fill::before {
+    content: "\f53f";
+}
+
+.fa-solid.stroke::before {
+    content: "\f851";
+}
+
+/* .fa-solid.save::before{ */
+/* content: "\f019";  */
 /* } */
 
-/* .fa::before { */
-/* font-family: fa; */
-/* } */
 
 /* .fa.facebook::before { */
 /* content: "\f39e"; */
@@ -312,9 +390,20 @@ body {
 }
 
 .main-controls {
+    padding: 1.125rem 1.905rem;
+    width: 525px;
     background-color: var(--);
     box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
     opacity: 0.11;
     border-radius: 30px;
     background-color: var(--bg-control-container);
+}
+
+.control.fa-solid.stroke {
+    position: absolute;
+}
+
+.opacity-input {
+    position: re;
+    /* opacity: 0; */
 }
