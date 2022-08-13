@@ -107,11 +107,13 @@
 
 /* icons */
 .fa-solid.share::before {
-    content: "\f1e0";
+    grid-area: share;
+    content: "\f1e0 \00a0 \00a0 \00a0 \00a0 ";
 }
 
 .fa-solid.save::before {
-    content: "\f019";
+    grid-area: save;
+    content: "\f019 \00a0 \00a0 \00a0 \00a0 ";
 }
 
 .fa-solid.delete::before {
@@ -123,10 +125,12 @@
 }
 
 .fa-solid.font-sml::before {
+    grid-area: down;
     content: "\41 \f068";
 }
 
 .fa-solid.font-lrg::before {
+    grid-area: up;
     content: "\41 \2b";
 }
 
@@ -139,23 +143,26 @@
 }
 
 .fa-solid.center::before {
+    grid-area: center;
     content: "\f037";
 }
 
 .fa-solid.left::before {
+    grid-area: left;
     content: "\f036";
 }
 
 .fa-solid.right::before {
+    grid-area: right;
     content: "\f038";
 }
 
 .fa-solid.fill::before {
-    content: "\f53f";
+    content: "\f575";
 }
 
 .fa-solid.stroke::before {
-    content: "\f851";
+    content: "\f53f";
 }
 
 /* .fa-solid.save::before{ */
@@ -212,6 +219,13 @@ h6 {
     line-height: 1;
 }
 
+.fa-solid,
+.fa-reg,
+.fa{
+    color: var(--bg-active);
+    font-size: 1rem;
+}
+
 body {
     margin: 0;
     font-size: 1rem;
@@ -236,6 +250,7 @@ body {
 
 .grid {
     display: grid;
+    gap: 1rem;
     /* grid-auto-flow: row dense; */
 }
 
@@ -392,18 +407,55 @@ body {
 .main-controls {
     padding: 1.125rem 1.905rem;
     width: 525px;
-    background-color: var(--);
     box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
-    opacity: 0.11;
+    /* opacity: 0.11; */
     border-radius: 30px;
     background-color: var(--bg-control-container);
 }
 
-.control.fa-solid.stroke {
-    position: absolute;
+.main-controls.grid{
+    grid-template-areas: 
+    "text"
+    "line-controls"
+    "text-controls"
+    "emoji"
+    "share";
 }
 
-.opacity-input {
-    position: re;
-    /* opacity: 0; */
+.grid>.main-text-input{
+    grid-area: text;
 }
+.line-controls{
+    grid-area: line-controls;
+    gap: 1rem;
+}
+.text-controls.grid{
+    background-color: var(--bg-text-controls);
+    grid-area: text-controls;
+    grid-template-rows: 2 1fr;
+    grid-template-columns: 5 1fr;
+    grid-template-areas: 
+    "up down left center right"
+    "select select select stroke fill"
+    ;
+}
+.select-font{
+    grid-area: select;
+}
+.control.fa-solid.stroke {
+    grid-area: stroke;
+    /* position: absolute; */
+}
+.control.fa-solid.fill{
+    grid-area: fill;
+}
+.share-btns{
+    grid-template-columns: 2 50%;
+    grid-template-areas:
+    "save share" ;
+}
+/* .opacity-input { */
+    /* position: relative; */
+    /* /~ opacity: 0; ~/ */
+/* } */
+

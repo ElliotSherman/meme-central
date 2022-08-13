@@ -40,37 +40,46 @@
 
             <!-- CONTROLLS -->
             <section class="main-controls grid">
+
                 <input class="main-text-input" type="text" placeholder="your text here"
                     oninput="onInputChange(this.type , this.value)">
 
-                <button class="control fa-solid switch" onclick=""></button>
-                <button class="control fa-solid add" onclick=""></button>
-                <button class="control erase-line fa-solid erase" onclick=""></button>
-                <button class="control-clear fa-solid delete" onclick="clearCanvas()"></button>
+                <div class="line-controls flex justify-center">
+                    <button class="control fa-solid switch" onclick=""></button>
+                    <button class="control fa-solid add" onclick=""></button>
+                    <button class="control erase-line fa-solid erase" onclick=""></button>
+                    <button class="control-clear fa-solid delete" onclick="clearCanvas()"></button>
+                </div>
 
+                <div class="grid text-controls">
+                    <select class="select-font" name="select-font" onchange="handleFontChange(this.value)">
+                        <option value="impact" selected>IMPACT</option>
+                        <option value="lato-bold">Lato</option>
+                        <option value="anonymous">Anonymous</option>
+                        <option value="anton">Anton</option>
+                        <option value="lime-regular">Meme Central</option>
+                    </select>
+                    <button class="control fa-solid font-lrg" value="add" onclick="onHandleTxtSize(this.value)"></button>
+                    <button class="control fa-solid font-sml" onclick="onHandleTxtSize()"></button>
+                    <button class="control  fa-solid left" value="left" onclick="onHandleAlignChange(this.value)"></button>
+                    <button class="control fa-solid center " value="center"
+                        onclick="onHandleAlignChange(this.value)"></button>
+                    <button class="control fa-solid right " value="right"
+                        onclick="onHandleAlignChange(this.value)"></button>
+                    <button class="control fa-solid stroke">
+                        <input type="color" name="color" class="opacity" oninput="onInputChange(this.type , this.value)">
+                    </button>
+                    <button class="control fa-solid fill">
+                        <input type="color" name="stroke" class="opacity" oninput="onInputChange(this.type , this.value)">
+                    </button>
+                </div>
                 <!-- <button class="control-position"></button> -->
-                <select name="select-font" onchange="handleFontChange(this.value)">
-                    <option value="impact" selected>IMPACT</option>
-                    <option value="lato-bold">Lato</option>
-                    <option value="anonymous">Anonymous</option>
-                    <option value="anton">Anton</option>
-                    <option value="lime-regular">Meme Central</option>
-                </select>
-                <button class="control fa-solid font-lrg" value="add" onclick="onHandleTxtSize(this.value)"></button>
-                <button class="control fa-solid font-sml" onclick="onHandleTxtSize()"></button>
-                <button class="control  fa-solid left" value="left" onclick="onHandleAlignChange(this.value)"></button>
-                <button class="control fa-solid center " value="center"
-                    onclick="onHandleAlignChange(this.value)"></button>
-                <button class="control fa-solid right " value="right"
-                    onclick="onHandleAlignChange(this.value)"></button>
-                <button class="control fa-solid fill">
-                    <input type="color" name="color" class="opacity" oninput="onInputChange(this.type , this.value)">
-                </button>
-                <button class="control fa-solid fill">
-                    <input type="color" name="stroke" class="opacity" oninput="onInputChange(this.type , this.value)">
-                </button>
-                <button class="fa-solid save" href="#">save</button>
-                <button class="fa-solid share" href="#">share</button>
+                <div class="emoji"></div>
+
+                <div class="share-btns grid">
+                    <button class="fa-solid save" href="#">Download</button>
+                    <button class="fa-solid share" href="#">Share</button>
+                </div>
             </section>
         </main>
         <!-- ABOUT -->
