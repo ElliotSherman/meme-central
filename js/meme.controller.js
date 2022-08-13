@@ -2,17 +2,21 @@
 
 function onInputChange(type, val) {
     inputChange(type, val)
+    renderMeme()
 }
 
 function onHandleTxtSize(val) {
     handleTxtSize(val)
+    renderMeme()
 }
 
 function onHandleAlignChange(val) {
     handleAlignChange(val)
+    renderMeme()
 }
 function handleFontChange(val) {
     fontChange(val)
+    renderMeme()
 }
 function clearCanvas() {
     document.querySelector('.main-gallery').classList.remove('hide')

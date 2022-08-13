@@ -35,7 +35,6 @@ function draw() {
 
 function fontChange(val) {
     gMeme.lines[0].font = val
-    renderMeme()
 }
 
 function handleTxtSize(val) {
@@ -43,7 +42,7 @@ function handleTxtSize(val) {
     val === "add" ? gMeme.lines[0].size++ : gMeme.lines[0].size--
     if (size >= 45 || size <= 10) return
     console.log(gMeme.lines[0].size)
-    renderMeme()
+
 }
 
 function drawImg(id) {
@@ -58,19 +57,16 @@ function inputChange(type, val) {
     } else if (type === 'color') {
         gMeme.lines[0].color = val
     }
-    renderMeme()
 }
 
 function imageSelect(el) {
     const { id } = el
     gMeme.selectedImgId = id
     drawImg(gMeme.selectedImgId)
-    // renderMeme()
 }
 
 function handleAlignChange(val) {
     gMeme.lines[0].align = val
-    renderMeme()
 }
 
 function renderMeme() {
