@@ -221,7 +221,7 @@ h6 {
 
 .fa-solid,
 .fa-reg,
-.fa{
+.fa {
     color: var(--bg-active);
     font-size: 1rem;
 }
@@ -241,7 +241,7 @@ body {
 /* HELPERS */
 /*button box-shadows */
 .btn-shadow {
-    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    box-shadow: inset 0 0.2rem 0 rgba(255, 255, 255, 0.58);
 }
 
 .text-center {
@@ -312,7 +312,7 @@ body {
     font-size: 1.5rem;
     font-family: peralta;
     margin-bottom: 0;
-    text-shadow: black -5px -2px 5px;
+    text-shadow: black -0.2rem -2px 0.2rem;
 }
 
 .second-logo {
@@ -394,7 +394,7 @@ body {
 .main-footer {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    box-shadow: black 10px -3px 14px 1px, inset cyan 0px 5px 14px 2px;
+    box-shadow: black 10px -3px 14px 1px, inset cyan 0px 0.2rem 14px 2px;
 }
 
 /* EDIT PAGE */
@@ -407,55 +407,114 @@ body {
 .main-controls {
     padding: 1.125rem 1.905rem;
     width: 525px;
-    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
-    /* opacity: 0.11; */
+    box-shadow: 1px 0.2rem 0 rgba(187, 196, 209, 0.11), inset 0 0.2rem 0 rgba(255, 255, 255, 0.11);
     border-radius: 30px;
-    background-color: var(--bg-control-container);
+    /* background-color: var(--bg-control-container); */
+    /* opacity: 0.11; */
+    background-color: rgba(235, 238, 243, 0.11);
 }
 
-.main-controls.grid{
-    grid-template-areas: 
-    "text"
-    "line-controls"
-    "text-controls"
-    "emoji"
-    "share";
+.main-controls.grid {
+    grid-template-areas:
+        "text"
+        "line-controls"
+        "text-controls"
+        "emoji"
+        "share";
 }
 
-.grid>.main-text-input{
+.grid>.main-text-input {
     grid-area: text;
 }
-.line-controls{
+
+.line-controls {
     grid-area: line-controls;
     gap: 1rem;
 }
-.text-controls.grid{
+
+.text-controls.grid {
     background-color: var(--bg-text-controls);
     grid-area: text-controls;
     grid-template-rows: 2 1fr;
     grid-template-columns: 5 1fr;
-    grid-template-areas: 
-    "up down left center right"
-    "select select select stroke fill"
+    grid-template-areas:
+        "up down left center right"
+        "select select select stroke fill"
     ;
+    padding: .52em .76em;
+    border-radius: 15px;
 }
-.select-font{
+
+.select-font {
     grid-area: select;
 }
+
 .control.fa-solid.stroke {
     grid-area: stroke;
     /* position: absolute; */
 }
-.control.fa-solid.fill{
+
+.control.fa-solid.fill {
     grid-area: fill;
 }
-.share-btns{
+
+.share-btns {
     grid-template-columns: 2 50%;
     grid-template-areas:
-    "save share" ;
+        "save share";
 }
-/* .opacity-input { */
-    /* position: relative; */
-    /* /~ opacity: 0; ~/ */
-/* } */
 
+.control {
+    height: 2.4285rem;
+    box-shadow: 1px 0.2rem 0 #bbc4d1, inset 0 0.2rem 0 #ffffff;
+    border-radius: 10px;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+
+.control.main-text-input {
+    color: #3d3d3d;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 28px;
+    font-family: lato-bold;
+}
+.line-controls .control{
+    padding: 0 16px;
+}
+.control.switch, .control.erase{
+    box-shadow: 1px 0.2rem 0 #048b97, inset 0 0.2rem 0 rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+}
+.control.add{
+    box-shadow: 1px 0.2rem 0 #015d33, inset 0 0.2rem 0 rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+}
+/* .control.erase{ */
+        /* background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%); */
+    /* box-shadow: 1px 0.2rem 0 #8c0606, inset 0 0.2rem 0 rgba(255, 255, 255, 0.58); */
+/* } */
+.control.delete{
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+    box-shadow: 1px 0.2rem 0 #8c0606, inset 0 0.2rem 0 rgba(255, 255, 255, 0.58);
+}
+.control.share{
+    box-shadow: 1px 0.21rem 0 #165c9c, inset 0 0.2rem 0 rgba(255, 255, 255,0.11);
+    background-color: var(--bg-share);
+}
+.control.save{
+    box-shadow: 1px 0.21rem 0 #632687, inset 0 0.2rem 0 rgba(255, 255, 255,0.11);
+    background-color: var(--bg-download);
+}
+
+.text-controls > .control{
+    background-color: white;
+    color: var(--bg-col1);
+}
+.control:hover{
+    box-shadow: rgba(0, 0, 0, 0.232) 0 0 0 0.13rem;
+}
+.control-active:active{
+    box-shadow: rgba(255, 255, 255, 0.232) 0 0 0 0.22rem;
+}

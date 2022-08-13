@@ -1,0 +1,56 @@
+@font-face {
+    font-family: lato-regular;
+    src: url(../styles/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: anonymous;
+    src: url(../styles/fonts/AnonymousPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: anton;
+    src: url(../styles/fonts/Anton-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato-bold;
+    src: url(../styles/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: lime-regular;
+    src: url(../styles/fonts/Limelight-Regular.ttf);
+}
+
+@font-face {
+    font-family: peralta;
+    src: url(../styles/fonts/Peralta-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(../styles/fonts/RobotoSlab-Bold.ttf);
+}
+
+@font-face {
+    font-family: roboto-slab;
+    src: url(../styles/fonts/RobotoSlab-Regular.ttf);
+}
+
+/* /~ FA ~/ */
+
+@font-face {
+    font-family: fa;
+    src: url(../styles/fontawsome/fa-brands-400.ttf);
+}
+
+@font-face {
+    font-family: fa-regular;
+    src: url(../styles/fontawsome/fa-regular-400.ttf);
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url(../styles/fontawsome/fa-solid-900.ttf);
+}
