@@ -1,12 +1,13 @@
 .main-editor {
-    height: 525px;
     justify-content: center;
-    gap: 90px;
+    align-items: center;
+    gap: 45px;
+    flex-direction: column;
 }
 
 .main-controls {
     padding: 1.125rem 1.905rem;
-    width: 525px;
+    /* width: 525px; */
     box-shadow: 1px 0.2rem 0 rgba(187, 196, 209, 0.11), inset 0 0.2rem 0 rgba(255, 255, 255, 0.11);
     border-radius: 30px;
     background-color: rgba(235, 238, 243, 0.11);
