@@ -22,7 +22,16 @@ let gMeme = {
         }
     ]
 }
+ // MOVE TO CONTROLLER
+function renderMeme() {
+    drawImg(gMeme.selectedImgId)
+    draw()
+}
 
+function getMeme() {
+
+    return gMeme
+}
 function draw() {
     let { txt, size, align, color, font } = gMeme.lines[0]
     gCtx.textBaseline = 'middle';
@@ -41,18 +50,18 @@ function handleTxtSize(val) {
     let { size } = gMeme.lines[0]
     val === "add" ? gMeme.lines[0].size++ : gMeme.lines[0].size--
     if (size >= 45 || size <= 10) return
-    console.log(gMeme.lines[0].size)
 
 }
 
 function drawImg(id) {
     const img = document.getElementById(id)
-    gCtx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     draw()
 }
 
 function inputChange(type, val) {
-    if (type === 'text') {
+    // gMeme.lines[0][type]  = val
+     if (type === 'text') {
         gMeme.lines[0].txt = val
     } else if (type === 'color') {
         gMeme.lines[0].color = val
@@ -69,10 +78,6 @@ function handleAlignChange(val) {
     gMeme.lines[0].align = val
 }
 
-function renderMeme() {
-    drawImg(gMeme.selectedImgId)
-    draw()
-}
 
 function borderSelectedLine(x, y) {
     gCtx.beginPath();

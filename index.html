@@ -11,9 +11,10 @@
 
 <body onload="init()">
 
-    <!-- HEADER -->
     <div class="main-app flex column justify-center main-layout">
+        <!-- HEADER -->
         <header class="main-header flex space-between align-center">
+
             <div class="logo flex column justify-center text-center">
                 <h1 class="main-logo">Meme</h1>
                 <span class="second-logo">Central</span>
@@ -32,7 +33,7 @@
             <!-- images will be rendered here -->
         </section>
 
-        <main class="main-editor page flex">
+        <main class="main-editor page flex hide">
             <!-- CANVAS -->
             <section class="canvas-container">
                 <canvas id="canvas" width="370" height="370"></canvas>
@@ -69,21 +70,26 @@
                         onclick="onHandleAlignChange(this.value)"></button>
                     <button class="control control-active fa-solid right " value="right"
                         onclick="onHandleAlignChange(this.value)"></button>
-                    <button class="control control-active fa-solid stroke">
-                        <input type="color" name="color" class="opacity"
-                            oninput="onInputChange(this.type , this.value)">
-                    </button>
-                    <button class="control fa-solid fill">
-                        <input type="color" name="stroke" class="opacity"
-                            oninput="onInputChange(this.type , this.value)">
-                    </button>
+
+                    <label for="stroke" class="control fa-solid stroke flex justify-center align-center"></label>
+                    <input id="stroke" type="color" name="stroke" style="display: none;"
+                        oninput="onInputChange(this.type , this.value)" />
+                    <label for="fill" class="control fa-solid fill flex justify-center align-center"></label>
+                    <input id="fill" type="color" name="fill" style="display: none;"
+                        oninput="onInputChange(this.type , this.value)" />
+
                 </div>
                 <!-- <button class="control-position"></button> -->
                 <div class="emoji"></div>
 
                 <div class="share-btns grid">
-                    <button class="fa-solid save control control-active" href="#">Download</button>
-                    <button class="fa-solid share control control-active" href="#">Share</button>
+                    <div class="control control-active flex justify-center align-center save">
+                        <a class="link fa-solid save" href="#" onclick="handleDownloadMeme(this)">Download</a>
+                    </div>
+                    <div class="control control-active flex justify-center align-center share">
+                        <a class="link fa-solid share" href="#" onclick="">Share</a>
+                    </div>
+
                 </div>
             </section>
         </main>

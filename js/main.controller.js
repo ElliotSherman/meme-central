@@ -1,7 +1,7 @@
 'use strict'
 
 let elGallery
-let elCanvas
+let gElCanvas
 let gCtx
 let gElNavlinks
 let gElPages
@@ -9,7 +9,7 @@ let gElPages
 function init() {
     gElNavlinks = document.querySelectorAll('.nav-item')
     gElPages = document.querySelectorAll('.page')
-    elCanvas = document.querySelector('#canvas')
+    gElCanvas = document.querySelector('#canvas')
     gCtx = document.getElementById('canvas').getContext('2d')
     elGallery = document.querySelector('.main-gallery')
     renderGallery()
@@ -17,6 +17,10 @@ function init() {
 
 function handleActive(el = gElNavlinks[1]) {
     renderMeme()
+    // change to for each during refactor
+    // gElNavlinks.forEach((el, idx) => {
+    //     el.classList
+    // });
     for (let i = 0; i < gElNavlinks.length; i++) {
         if (gElNavlinks[i] === el) {
             gElNavlinks[i].classList.add('active')

@@ -1,0 +1,86 @@
+.main-header {
+    background-image: var(--bg-grad);
+    border-radius: 100px;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 0.76rem;
+}
+
+.logo {
+    margin-left: 50px;
+    height: 3.47rem;
+    color: var(--bg-active);
+    text-transform: uppercase;
+}
+
+.main-logo {
+    font-size: 1.5rem;
+    font-family: peralta;
+    margin-bottom: 0;
+    text-shadow: black -0.2rem -2px 0.2rem;
+}
+
+.second-logo {
+    font-family: lato-regular;
+    font-size: 1rem;
+    letter-spacing: 10px;
+    line-height: 0.8;
+}
+
+.main-gallery {
+    flex: 1;
+    background-color: var(--bg-col2);
+    border-radius: 10px;
+    padding: 2.7142rem;
+    grid-auto-flow: dense;
+    grid-column-gap: 30px;
+    grid-row-gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.main-footer {
+    flex: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: var(--bg-grad);
+    width: 100%;
+}
+
+/* navbar */
+.main-nav {
+    height: 3.47rem;
+    flex-basis: 50%;
+}
+
+.main-nav .nav {
+    justify-content: center;
+    width: 100%;
+}
+
+.nav .nav-item {
+    flex: 1;
+}
+
+.nav .nav-item a {
+    height: 100%;
+    color: var(--bg-active);
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+.nav-item.active>a,
+.nav .nav-item:hover a {
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fefefe;
+    color: var(--bg-text-controls);
+    border-radius: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .25rem;
+    padding-bottom: 0.25rem;
+}

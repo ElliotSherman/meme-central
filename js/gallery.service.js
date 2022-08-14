@@ -95,7 +95,7 @@ const gImgs = [
     },
 ]
 //  {id url keywords}
-
+ // change
 function renderGallery(gallery) {
     _createImages(gallery)
 }

@@ -1,0 +1,116 @@
+.fa::before {
+    font-family: fa;
+}
+
+.fa-reg::before {
+    font-family: fa-regular;
+}
+
+.fa-solid::before {
+    font-family: fa-solid;
+}
+
+/* icons */
+.fa-solid.share::before {
+    grid-area: share;
+    content: "\f1e0 \00a0 \00a0 \00a0 \00a0 ";
+}
+
+.fa-solid.save::before {
+    grid-area: save;
+    content: "\f019 \00a0 \00a0 \00a0 \00a0 ";
+}
+
+.fa-solid.delete::before {
+    content: "\f2ed";
+}
+
+.fa-solid.erase::before {
+    content: "\f12d";
+}
+
+.fa-solid.font-sml::before {
+    grid-area: down;
+    content: "\41 \f068";
+}
+
+.fa-solid.font-lrg::before {
+    grid-area: up;
+    content: "\41 \2b";
+}
+
+.fa-solid.add::before {
+    content: "\2b";
+}
+
+.fa-solid.switch::before {
+    content: "\e476";
+}
+
+.fa-solid.center::before {
+    grid-area: center;
+    content: "\f037";
+}
+
+.fa-solid.left::before {
+    grid-area: left;
+    content: "\f036";
+}
+
+.fa-solid.right::before {
+    grid-area: right;
+    content: "\f038";
+}
+
+.fa-solid.fill::before {
+    content: "\f575";
+}
+
+.fa-solid.stroke::before {
+    content: "\f53f";
+}
+
+
+/* basics */
+* {
+    box-sizing: border-box;
+}
+
+/* BASE */
+
+html {
+    font-family: lato-regular;
+    background-color: var(--bg-col1);
+    font-size: 21px;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1em;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.fa-solid,
+.fa-reg,
+.fa {
+    color: var(--bg-active);
+    font-size: 1rem;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    height: 100%;
+}
+
+/* layout */
+.main-layout {
+    max-width: 1280px;
+    margin: auto;
+}

@@ -1,0 +1,17 @@
+
+.image-container img {
+    transition: box-shadow ease-in-out 0.3s;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.image-container img:hover {
+    box-shadow: black -7px 8px 14px 8px;
+}
+
+.main-footer {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: black 10px -3px 14px 1px, inset cyan 0px 0.2rem 14px 2px;
+}

@@ -1,0 +1,15 @@
+:root {
+    --bg-grad: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    --bg-col1: #22252c;
+    --bg-col2: #383b42;
+    --bg-search: #22252c;
+    --bg-active: #fefefe;
+    --bg-text-controls: #19a59f;
+    --bg-control-container: #ebeef3;
+
+    --bg-delete: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+    --bg-add-line: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+    --bg-switch-ine: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+    --bg-share: #1e7cd3;
+    --bg-download: #8f44bb;
+}
