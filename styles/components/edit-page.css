@@ -72,15 +72,18 @@
     transition: box-shadow 0.3s;
 }
 
+.control.main-text-input:focus::placeholder{
+    color: white;
+}
 .control.main-text-input {
     color: #3d3d3d;
     font-size: 1.2rem;
     text-transform: uppercase;
-    text-align: center;
+    text-align: start;
     border-radius: 28px;
     font-family: lato-bold;
+    padding-inline-start: 0.5rem;
 }
-
 .line-controls .control {
     padding: 0 16px;
 }
