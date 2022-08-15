@@ -7,10 +7,27 @@
 }
 
 .image-container img:hover {
-    box-shadow: black -7px 8px 14px 8px;
+    box-shadow: #00000069 0px 0px 14px 8px;
+}
+
+.main-gallery {
+    flex: 1;
+    background-color: var(--bg-col2);
+    border-radius: 10px;
+    padding: 2.7142rem;
+    grid-auto-flow: dense;
+    grid-column-gap: 30px;
+    grid-row-gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
 .main-footer {
+    color: white;
+    padding-bottom: 0.2em;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: black 10px -3px 14px 1px, inset cyan 0px 0.2rem 14px 2px;

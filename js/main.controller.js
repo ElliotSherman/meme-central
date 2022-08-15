@@ -25,9 +25,16 @@ function handleActive(el = gElNavlinks[1]) {
         if (gElNavlinks[i] === el) {
             gElNavlinks[i].classList.add('active')
             gElPages[i].classList.remove('hide')
+            document.body.classList.toggle('menu-opened');
         } else {
             gElNavlinks[i].classList.remove('active')
             gElPages[i].classList.add('hide')
         }
     }
+}
+
+
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-opened');
 }

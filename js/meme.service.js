@@ -2,44 +2,75 @@
 
 let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
-
 let gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [
         {
             txt: 'I sometimes eat Falafel',
-            size: 40,
+            size: 30,
             align: 'center',
             font: 'impact',
-            color: 'red'
+            color: 'white',
+            stroke: 'black',
+            pos: {
+                x: 190,
+                y: 40
+            }
+
         },
-        {
-            txt: 'somtimes i dont',
-            size: 40,
-            align: 'impact',
-            color: 'blue'
-        }
+        // {
+        //     txt: 'somtimes i dont',
+        //     size: 30,
+        //     align: 'impact',
+        //     color: 'white',
+        //     align: 'center',
+        //     font: 'impact',
+        //     color: 'white',
+        //     stroke: 'black',
+        //     pos:{
+        //         x:190,
+        //         y:350
+        //     }
+        // }
     ]
 }
- // MOVE TO CONTROLLER
+// MOVE TO CONTROLLER
 function renderMeme() {
     drawImg(gMeme.selectedImgId)
     draw()
 }
 
 function getMeme() {
-
     return gMeme
 }
+
 function draw() {
-    let { txt, size, align, color, font } = gMeme.lines[0]
-    gCtx.textBaseline = 'middle';
-    gCtx.font = `${size}px ${font}`;
-    gCtx.textAlign = align
-    gCtx.lineWidth = 1;
-    gCtx.fillStyle = color
-    gCtx.fillText(txt, 200, 100)
+    let meme = getMeme()
+    meme.lines.forEach((line) => {
+        let { txt, size, align, color, font, stroke, pos } = line
+        gCtx.beginPath();
+        gCtx.textBaseline = 'middle';
+        gCtx.font = `${size}px ${font}`;
+        gCtx.textAlign = align
+        gCtx.lineWidth = 3;
+        gCtx.fillStyle = color
+        gCtx.strokeStyle = stroke
+        gCtx.fillText(txt, pos.x, pos.y, gElCanvas.width)
+        gCtx.strokeText(txt, pos.x, pos.y, gElCanvas.width)
+        gCtx.closePath();
+    })
+    // let { txt, size, align, color, font, stroke, pos } = meme.lines[meme.selectedLineIdx]
+    // gCtx.beginPath();
+    // gCtx.textBaseline = 'middle';
+    // gCtx.font = `${size}px ${font}`;
+    // gCtx.textAlign = align
+    // gCtx.lineWidth = 3;
+    // gCtx.fillStyle = color
+    // gCtx.strokeStyle = stroke
+    // gCtx.fillText(txt, pos.x, pos.y, gElCanvas.width)
+    // gCtx.strokeText(txt, pos.x, pos.y, gElCanvas.width)
+    // gCtx.closePath();
 }
 
 function fontChange(val) {
@@ -47,10 +78,11 @@ function fontChange(val) {
 }
 
 function handleTxtSize(val) {
-    let { size } = gMeme.lines[0]
-    val === "add" ? gMeme.lines[0].size++ : gMeme.lines[0].size--
-    if (size >= 45 || size <= 10) return
-
+    const meme = getMeme()
+    const { selectedLineIdx } = meme
+    // if (|| ) return
+    val === "add" && gMeme.lines[selectedLineIdx].size <= 45 ? gMeme.lines[selectedLineIdx].size += 5 : ''
+    val !== "add" && gMeme.lines[selectedLineIdx].size >= 20 ? gMeme.lines[selectedLineIdx].size -= 5 : ''
 }
 
 function drawImg(id) {
@@ -60,11 +92,12 @@ function drawImg(id) {
 }
 
 function inputChange(type, val) {
+
     // gMeme.lines[0][type]  = val
-     if (type === 'text') {
-        gMeme.lines[0].txt = val
+    if (type === 'text') {
+        gMeme.lines[gMeme.selectedLineIdx].txt = val
     } else if (type === 'color') {
-        gMeme.lines[0].color = val
+        gMeme.lines[gMeme.selectedLineIdx].color = val
     }
 }
 
@@ -87,4 +120,24 @@ function borderSelectedLine(x, y) {
     gCtx.strokeStyle = 'red';
     gCtx.stroke();
     gCtx.closePath();
+}
+
+function addLine() {
+    const inputVal = document.querySelector('.main-text-input').value
+    if (!inputVal) {
+        gMeme.lines.push(
+            {
+                txt: 'your text here',
+                size: 30,
+                align: 'center',
+                font: 'impact',
+                color: 'white',
+                stroke: 'black',
+                pos: {
+                    x: 190,
+                    y: gMeme.lines.length > 1 ? 175 : 350
+                }
+            }
+        )
+    }
 }

@@ -22,6 +22,7 @@ function handleFontChange(val) {
 function clearCanvas() {
     document.querySelector('.main-gallery').classList.remove('hide')
     document.querySelector('.main-editor').classList.add('hide')
+    document.body.classList.toggle('menu-opened');
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
     handleActive(gElNavlinks[0])
     // You may clear part of the canvas
@@ -32,4 +33,10 @@ function handleDownloadMeme(elLink) {
     const data = gElCanvas.toDataURL();
     elLink.href = data;
     elLink.download = 'my-canvas';
+}
+
+function onAddLine(){
+    console.log('add line');
+    addLine()
+    renderMeme()
 }

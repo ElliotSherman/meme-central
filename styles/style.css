@@ -1,57 +1,10 @@
-
 @import "setup/vars.css";
-
 @import "setup/typography.css";
-
 @import "basic/basic.css";
-
 @import "helpers/helpers.css";
 
-
-/* COMPONENTS */
 @import "components/header.css";
 @import "components/gallery.css";
 @import "components/edit-page.css";
 
-
-/* MOBILE ONLY  */
-
-@media (max-width: 900px) {
-    /* .card { */
-        /* flex-direction: column; */
-    /* } */
-    /* .main-nav-list { */
-        /* position: fixed; */
-        /* left: 0; */
-        /* background-color: #292929; */
-        /* flex-direction: column; */
-        /* width: 100%; */
-        /* top: 40px; */
-    /* } */
-    /* .main-header .main-nav-list a { */
-        /* width: 100%; */
-    /* } */
-
-    /* .main-header .main-nav-list > li { */
-        /* border-bottom: 1px solid var(--clr12); */
-    /* } */
-}
-/* SMAll */
-
-@media (min-width: 540px) {
-
-}
-
-/* MEDIUM */
-
-@media (min-width: 900px) {
-    html{
-        font-size: 21px;
-    }
-    .main-editor{
-        flex-direction: row;
-        gap: 90px;
-    }
-    .main-controls{
-    }
-}
+@import "mq/mq.css";
