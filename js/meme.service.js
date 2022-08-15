@@ -108,7 +108,7 @@ function imageSelect(el) {
 }
 
 function handleAlignChange(val) {
-    gMeme.lines[0].align = val
+    gMeme.lines[selectedLineIdx].align = val
 }
 
 
@@ -124,6 +124,7 @@ function borderSelectedLine(x, y) {
 
 function addLine() {
     const inputVal = document.querySelector('.main-text-input').value
+
     if (!inputVal) {
         gMeme.lines.push(
             {
@@ -140,4 +141,10 @@ function addLine() {
             }
         )
     }
+}
+
+function switchLine(){
+    if(gMeme.selectedLineIdx === gMeme.lines.length-1)gMeme.selectedLineIdx = 0
+    gMeme.selectedLineIdx++
+    console.log(gMeme.selectedLineIdx)
 }

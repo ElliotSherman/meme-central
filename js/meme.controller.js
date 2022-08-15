@@ -40,3 +40,9 @@ function onAddLine(){
     addLine()
     renderMeme()
 }
+
+function onSwitchLine(){
+    console.log('SDSADSA');
+    
+    switchLine()
+}
